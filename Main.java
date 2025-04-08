@@ -2,87 +2,153 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("------------");
-            System.out.println("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit");
-            System.out.print("Enter your choice: ");
-            int choice = sc.nextInt();
-
-            if (choice == 5) {
-                System.out.println("Exiting the program. Goodbye!");
-                break;
-            }
-
-            if (choice >= 1 && choice <= 4) {
-                System.out.print("Enter the number of values (2 or 3): ");
-                int digit = sc.nextInt();
-                double result = 0;
-
-                if (digit == 2) {
-                    System.out.print("Enter two numbers: ");
-                    double num1 = sc.nextDouble();
-                    double num2 = sc.nextDouble();
-                    switch (choice) {
-                        case 1:
-                            result = Calculator.add(num1, num2);
-                            System.out.println(num1 + " + " + num2 + " = " + result);
-                            break;
-                        case 2:
-                            result = Calculator.sub(num1, num2);
-                            System.out.println(num1 + " - " + num2 + " = " + result);
-                            break;
-                        case 3:
-                            result = Calculator.mul(num1, num2);
-                            System.out.println(num1 + " * " + num2 + " = " + result);
-                            break;
-                        case 4:
-                            if (num2 != 0) {
-                                result = Calculator.div(num1, num2);
-                                System.out.println(num1 + " / " + num2 + " = " + result);
-                            } else {
-                                System.out.println("Division by zero is not possible.");
-                            }
-                            break;
+        Scanner sc= new Scanner(System.in);
+        byte choice;
+        byte inchoice;
+        lable:while(true) {
+            System.out.println(" 1.Addition \n 2.Subtraction \n 3.Mul \n 4.Div \n 5.exit");
+            System.out.print("Enter your choice:");
+            choice = sc.nextByte();
+            switch (choice) {
+                case 1:
+                    System.out.println(" 1)add 2 num \n 2)add 3 num \n 3)add n num");
+                    inchoice = sc.nextByte();
+                    if (inchoice == 1) {
+                        System.out.println("Enter value 1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        double result = Calculator.add(a, b);
+                        System.out.println("The result is " + result);
+                    } else if (inchoice == 2) {
+                        System.out.println("Enter value1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        System.out.println("Enter value 3:");
+                        double c = sc.nextDouble();
+                        double result = Calculator.add(a, b, c);
+                        System.out.println("The result is " + result);
                     }
-
-                } else if (digit == 3) {
-                    System.out.print("Enter three numbers: ");
-                    double num1 = sc.nextDouble();
-                    double num2 = sc.nextDouble();
-                    double num3 = sc.nextDouble();
-                    switch (choice) {
-                        case 1:
-                            result = Calculator.add(num1, num2, num3);
-                            System.out.println(num1 + " + " + num2 + " + " + num3 + " = " + result);
-                            break;
-                        case 2:
-                            result = Calculator.sub(num1, num2, num3);
-                            System.out.println(num1 + " - " + num2 + " - " + num3 + " = " + result);
-                            break;
-                        case 3:
-                            result = Calculator.mul(num1, num2, num3);
-                            System.out.println(num1 + " * " + num2 + " * " + num3 + " = " + result);
-                            break;
-                        case 4:
-                            if (num2 != 0 && num3 != 0) {
-                                result = Calculator.div(num1, num2, num3);
-                                System.out.println(num1 + " / " + num2 + " / " + num3 + " = " + result);
-                            } else {
-                                System.out.println("Division by zero is not possible.");
+                    else if (inchoice == 3)
+                    {
+                        double b= 0;
+                        base:while(true){
+                            System.out.print("Enter the value:");
+                            double a= sc.nextDouble();
+                            b=b+a;
+                            System.out.println("The value is:"+b);
+                            if(a==0){
+                                break lable;
                             }
-                            break;
+                        }
                     }
+                    else {
+                        System.out.println("Enter the valid num");
+                    }
+                    break;
+                case 2:
+                    System.out.println(" 1)sub 2 num \n 2)sub 3 num \n 3)sub n num");
+                    inchoice = sc.nextByte();
+                    if (inchoice == 1) {
+                        System.out.println("Enter value 1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        double result = Calculator.sub(a, b);
+                        System.out.println("The result is " + result);
+                    } else if (inchoice == 2) {
+                        System.out.println("Enter value1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        System.out.println("Enter value 3:");
+                        double c = sc.nextDouble();
+                        double result = Calculator.sub(a, b, c);
+                        System.out.println("The result is " + result);
+                    }
+                    else if (inchoice == 3)
+                    {
+                        double b= 0;
+                        base:while(true){
+                            System.out.print("Enter the value:");
+                            double a= sc.nextDouble();
+                            b=b-a;
+                            System.out.println("The value is:"+b);
+                            if(a==0){
+                                break lable;
+                            }
+                        }
+                    }
+                    else {
+                        System.out.println("Enter the valid num");
+                    }
+                    break;
+                case 3:
+                    System.out.println(" 1)mul 2 num \n 2)mul 3 num \n 3)mul n num");
+                    inchoice = sc.nextByte();
+                    if (inchoice == 1) {
+                        System.out.println("Enter value 1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        double result = Calculator.mul(a, b);
+                        System.out.println("The result is " + result);
+                    } else if (inchoice == 2) {
+                        System.out.println("Enter value1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        System.out.println("Enter value 3:");
+                        double c = sc.nextDouble();
+                        double result = Calculator.mul(a, b, c);
+                        System.out.println("The result is " + result);
+                    }
+                    else if (inchoice == 3) {
+                        double b = 0;
+                        base:
+                        while (true) {
+                            System.out.print("Enter the value:");
+                            double a = sc.nextDouble();
+                            b = b * a;
+                            System.out.println("The value is:" + b);
+                            if (a == 0) {
+                                break lable;
+                            }
+                        }
+                    }
+                    else {
+                        System.out.println("Enter the valid num");
+                    }
+                case 4:
+                    System.out.println(" 1)mul 2 num \n 2)mul 3 num \n 3)mul n num");
+                    inchoice = sc.nextByte();
+                    if (inchoice == 1) {
+                        System.out.println("Enter value 1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        double result = Calculator.div(a, b);
+                        System.out.println("The result is " + result);
+                    } else if (inchoice == 2) {
+                        System.out.println("Enter value1:");
+                        double a = sc.nextDouble();
+                        System.out.println("Enter value 2:");
+                        double b = sc.nextDouble();
+                        System.out.println("Enter value 3:");
+                        double c = sc.nextDouble();
+                        double result = Calculator.div(a, b, c);
+                        System.out.println("The result is " + result);
+                    }
+                    else {
+                        System.out.println("Enter the valid num");
+                    }
+                case 5:
+                    break lable;
+                default:
+                    System.out.println("invalid choice ..... Enter a valid number");
 
-                } else {
-                    System.out.println("Invalid number of digits");
-                }
-
-            } else {
-                System.out.println("Invalid choice.");
             }
         }
-        sc.close();
     }
 }

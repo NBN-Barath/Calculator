@@ -1,34 +1,43 @@
+import java.util.Scanner;
+
 public class Calculator {
-
-    public static double add(double a,double b) {
-        return a + b;
+    static double add( double num1 , double num2){
+        double result = num1 + num2 ;
+        return(result);
+    }
+    static double add( double num1 , double num2 , double num3) {
+        double result = num1 + num2 + num3;
+        return (result);
+    }
+    static double sub( double num1 , double num2){
+        double result = num1 - num2 ;
+        return(result);
+    }
+    static double sub( double num1 , double num2 , double num3) {
+        double result = num1 - num2 - num3;
+        return (result);
+    }
+    static double mul( double num1 , double num2){
+        double result = num1 * num2 ;
+        return(result);
+    }
+    static double mul( double num1 , double num2 , double num3) {
+        double result = num1 * num2 * num3;
+        return (result);
+    }
+    static double div( double num1 , double num2){
+        double result = num1 / num2 ;
+        return(result);
+    }
+    static double div( double num1 , double num2 , double num3) {
+        double result = num1 / num2 / num3;
+        return (result);
+    }
+    static double mod( double num1 , double num2){
+        double result = num1 % num2 ;
+        return(result);
     }
 
-    public static double sub(double a,double b){
-        return a-b;
-    }
 
-    public static double mul(double a,double b){
-        return a*b;
-    }
 
-    public static double div(double a,double b){
-        return a/b;
-    }
-
-    public static double add(double a,double b,double c){
-        return a+b+c;
-    }
-
-    public static double sub(double a,double b,double c){
-        return a-b-c;
-    }
-
-    public static double mul(double a,double b,double c){
-        return a*b*c;
-    }
-
-    public static double div(double a,double b,double c){
-        return a/b/c;
-    }
 }
